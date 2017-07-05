@@ -1,0 +1,10 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.dashboard div{
+  margin: auto !important;
+}
