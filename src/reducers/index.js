@@ -1,7 +1,12 @@
 import { combineReducers } from 'redux';
-
+import { routerReducer } from 'react-router-redux';
 import dummy from './dummyReducer';
 
-export default combineReducers({
-  dummy,
-});
+const rootReducer = combineReducers(
+  {
+    routerReducer,
+    dummy,
+  },
+);
+
+export default rootReducer;

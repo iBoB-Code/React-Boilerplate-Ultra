@@ -1,4 +1,0 @@
-web:
-  image: react-skeleton-app-boilerplate/web-app:latest
-  ports:
-    - "3000:3000"
