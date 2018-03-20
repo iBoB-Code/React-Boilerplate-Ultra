@@ -1,18 +1,18 @@
-ORG = xxx
-NAME = web-app
+ORG = webapp
+NAME = webapp
 SHA1 = $(shell git log -1 --pretty=oneline | cut -c-10)
 BRANCH = $(shell git branch -a --contains $(SHA1) | egrep '(remotes/|\*)' | egrep -v "(HEAD|detached)" | head -1 | sed -e "s/\* //" -e "s/.*\///")
 VERSION = $(BRANCH)-$(SHA1)
 
-all: install build start
+all: install prod
 
 install:
 	yarn install
 
-build:
-	yarn build
+dev:
+	yarn dev
 
-start:
+prod:
 	yarn start
 
 d-build: build

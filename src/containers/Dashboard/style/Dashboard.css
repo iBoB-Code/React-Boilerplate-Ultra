@@ -1,0 +1,21 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dashboardContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+}
+
+.dashboard .card .container {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard .card .container .button, .home .card .container .label {
+  margin: 5px 0;
+}

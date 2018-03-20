@@ -1,0 +1,24 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  background-color: rgb(40, 40, 40);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.head {
+  color: #fff;
+}
+
+.window {
+  background-color: rgb(255, 255, 255);
+  flex-grow: 1;
+  margin: 20px 60px;
+  display: flex;
+}
