@@ -1,7 +1,6 @@
 # Logs
 logs
 *.log
-npm-debug.log*
 
 # Runtime data
 pids
@@ -14,31 +13,20 @@ lib-cov
 # Coverage directory used by tools like istanbul
 coverage
 
-# nyc test coverage
-.nyc_output
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
-# node-waf configuration
-.lock-wscript
-
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
-# Dependency directories
+# Dependency directory
+# https://docs.npmjs.com/cli/shrinkwrap#caveats
 node_modules
-jspm_packages
 
-# Optional npm cache directory
-.npm
+# Debug log from npm
+npm-debug.log
+npm-debug.log.*
 
-# Optional REPL history
-.node_repl_history
-
-# Build folder for Webpack output
-example/public/bundle.js
-example/public/bundle.js.map
-yarn.lock
-
+# Webpack Build Directory
+dist
 dist/*
+
+# DS_Store
+.DS_Store
+
+# Config
+.env

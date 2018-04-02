@@ -1,13 +1,14 @@
-export function incrementCounter(val) {
+export function logout() {
   return {
-    type: 'INCREMENT_COUNTER',
-    payload: val,
+    type: 'LOGOUT',
+    payload: null
   };
 }
 
-export function toggleChange(val) {
+
+export function anotherDummyAction(someValue) {
   return {
-    type: 'TOGGLE_CHANGE',
-    payload: val,
+    type: 'TRIGGER_SOMETHING',
+    payload: someValue
   };
 }

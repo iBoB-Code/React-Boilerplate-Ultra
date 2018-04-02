@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import asyn from './asyncReducer';
-import home from './homeReducer';
+import { reducer as formReducer } from 'redux-form';
+import asyncReducer from './asyncReducer';
+import homeReducer from './homeReducer';
+import dashboardReducer from './dashboardReducer';
 
 const rootReducer = combineReducers({
-  routerReducer,
-  asyn,
-  home,
+  form: formReducer,
+  asyn: asyncReducer,
+  home: homeReducer,
+  dashboard: dashboardReducer
 });
 
 export default rootReducer;

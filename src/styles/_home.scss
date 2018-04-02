@@ -1,0 +1,102 @@
+@import './keyframes';
+
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .header {
+    -webkit-animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-elliptic-top-fwd 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  .status {
+	  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
+	  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 2s both;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    i.beat {
+      color: #E8E8E8;
+      animation-name: beating;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+  }
+  .container {
+    margin-top: 50px;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .card {
+      margin: 0 !important;
+      .content {
+        flex-grow: unset;
+      }
+      .desc {
+        height: 100px;
+      }
+      .bod {
+        flex-grow: 1;
+      }
+      &.left {
+        -webkit-animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+      	animation: roll-in-blurred-left 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+      }
+      &.right {
+      	-webkit-animation: roll-in-blurred-right 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+      	animation: roll-in-blurred-right 0.65s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+
+      }
+      form {
+        div {
+          display: flex;
+          margin-bottom: 20px;
+          align-items: baseline;
+          .label {
+            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+            font-weight: 700;
+            line-height: 1em;
+            font-style: normal;
+            text-align: right;
+            display: block;
+            width: 70px;
+            padding-right: 5px;
+          }
+          input {
+            font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+            font-weight: 700;
+            line-height: 1em;
+            font-style: normal;
+            width: 140px;
+            padding-left: 5px;
+            border-bottom: 3px solid #E8E8E8;
+            color: #1CB5AC;
+            margin-right: 10px;
+          }
+          input:focus {
+            border-bottom: 3px solid #1CB5AC;
+          }
+        }
+      }
+      button {
+        margin-top: 5px;
+        width: 100%;
+        background-color: #1CB5AC;
+        color: white;
+        &:hover {
+          background-color: #28c1b8;
+        }
+      }
+    }
+    .loaderContainer {
+      width: 100px;
+      .loader {
+        visibility: hidden;
+      }
+      .loader.active {
+        visibility: visible;
+      }
+    }
+  }
+}

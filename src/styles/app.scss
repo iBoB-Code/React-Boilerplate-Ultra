@@ -1,0 +1,56 @@
+html, body, #root{
+  width: 100%;
+  height: 100%;
+  font-family: 'ProximaNova-Reg-webfont', 'Roboto-Regular', 'ProximaNovaReg', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+input {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+input:focus {
+  outline: 0 solid transparent;
+}
+
+input:-webkit-autofill {
+  background-color: white !important;
+}
+
+#root > div, .wait {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes beating {
+  0%   {color: #E8E8E8;}
+  10%  {color: #1CB5AC;}
+  100% {color: #E8E8E8;}
+}
+
+@font-face {
+	font-family: 'ProximaNova-Reg-webfont';
+	src:url('../assets/fonts/ProximaNova-Reg-webfont/ProximaNova-Reg-webfont.eot');
+	src:url('../assets/fonts/ProximaNova-Reg-webfont/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/ProximaNova-Reg-webfont/ProximaNova-Reg-webfont.woff2') format('woff2'),
+		url('../assets/fonts/ProximaNova-Reg-webfont/ProximaNova-Reg-webfont.ttf') format('truetype'),
+		// url('../assets/fonts/ProximaNova-Reg-webfont/ProximaNova-Reg-webfont.svg#proxi') format('svg');
+}
+
+@font-face {
+	font-family: 'Roboto-Regular';
+	src:url('../assets/fonts/Roboto-Regular/Roboto-Regular.eot');
+	src:url('../assets/fonts/Roboto-Regular/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/Roboto-Regular/Roboto-Regular.woff2') format('woff2'),
+		url('../assets/fonts/Roboto-Regular/Roboto-Regular.ttf') format('truetype'),
+		// url('../assets/fonts/Roboto-Regular/Roboto-Regular.svg#proxi') format('svg');
+}
+
+@import './home';
+@import './notFound';
+@import './visitor';
+@import './dashboard';

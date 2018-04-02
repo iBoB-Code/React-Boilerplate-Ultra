@@ -1,43 +1,47 @@
-/*
-  Base.js
-
-  The "root" component that persists throughout the app,
-  contains client router logic
-*/
-
 import React from 'react';
-import { withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Provider } from 'react-redux';
+import Switch from 'react-router-dom/Switch';
+import Route from 'react-router-dom/Route';
+import 'semantic-ui-css/semantic.min.css';
+// import Helmet from 'react-helmet';
+import BrowserRouter from 'react-router-dom/BrowserRouter';
+import PrivateRoute from 'COMPONENTS/PrivateRoute';
+import PublicRoute from 'COMPONENTS/PublicRoute';
 
-import BaseRoutes from '../routing/BaseRoutes.js';
+import Home from './Home';
+import Dashboard from './Dashboard';
+import Visitor from './Visitor';
+import NotFound from './NotFound';
 
-import './App.css';
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    // good for debugging - avoid excessive rendering
-    this.renderCount = 0;
-  }
-
-  render() {
-    this.renderCount++;
-    console.log('RENDERS:', this.renderCount);
-    // --> /src/routing/BaseRoutes.js
-    return (
-      <div className="app">
-        <div className="head">
-          <h1>WELCOME TO THE BOILERPLATE</h1>
-          <h3>The window below is the main routed view containing all the components</h3>
-          <h5>{`You currently are on the route : ${this.props.location.pathname}`}</h5>
-          <h5>{`Rendering the container : ${this.props.location.pathname === '/' ? 'Home' : 'Dashboard'}`}</h5>
-        </div>
-        <div className="window">
-          <BaseRoutes location={this.props.location} />
-        </div>
-      </div>
-    );
-  }
+// Force import during development to enable Hot-Module Replacement
+if (process.env.NODE_ENV === 'development') {
+  require('./Home'); // eslint-disable-line global-require
+  require('./Dashboard'); // eslint-disable-line global-require
+  require('./Visitor'); // eslint-disable-line global-require
+  require('./NotFound'); // eslint-disable-line global-require
 }
 
-export default withRouter(connect()(App));
+const supportsHistory = 'pushState' in window.history;
+
+const App = props => (
+  <Provider store={props.store}>
+    <BrowserRouter forceRefresh={!supportsHistory} keyLength={12}>
+      <div>
+        {/* <Helmet titleTemplate="%s - DeviceNet" defaultTitle="DeviceNet" /> */}
+        <Switch>
+          <PublicRoute path="/" component={Home} exact={true} />
+          <PublicRoute path="/visitorRoute" component={Visitor} redirect="/loggedRoute" exact={true} />
+          <PrivateRoute path="/loggedRoute" component={Dashboard} redirect="/visitorRoute" exact={true} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+  </Provider>
+);
+
+App.propTypes = {
+  store: PropTypes.object.isRequired
+};
+
+export default App;

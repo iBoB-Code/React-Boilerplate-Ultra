@@ -7,13 +7,16 @@ VERSION = $(BRANCH)-$(SHA1)
 all: install prod
 
 install:
-	yarn install
+	yarn
 
 dev:
 	yarn dev
 
 prod:
 	yarn start
+
+build:
+	yarn build
 
 d-build: build
 	docker build --rm -t $(ORG)/$(NAME):${VERSION} .
