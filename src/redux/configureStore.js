@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import promise from 'redux-promise-middleware';
 import reducer from 'REDUX/reducers/index';
 // import { routerMiddleware } from 'react-router-redux';
@@ -10,7 +10,7 @@ export const configure = (history, initialState = {}) => {
     reducer,
     initialState,
     compose(
-      applyMiddleware(promise(), thunk, createLogger()),
+      applyMiddleware(promise(), thunk),
       window.devToolsExtension && process.env.NODE_ENV !== 'production' ? window.devToolsExtension() : f => f
     )
   );

@@ -1,13 +1,31 @@
 import axios from 'axios';
 import LocalStorageManager from 'UTILS/LocalStorageManager';
 
-export function makeCall(url) {
+export function scrap(i) {
   return dispatch => new Promise((resolve, reject) => {
     dispatch({ type: 'FETCH_UPDATE', payload: true });
-    return axios.get(url)
+    return axios.get('https://www.bienici.com/realEstateAds.json', {
+      params: {
+        filters: {
+          size: 100,
+          from: i,
+          filterType: 'rent',
+          propertyType: ['flat'],
+          maxAuthorizedResults: 2400,
+          sortBy: 'price',
+          sortOrder: 'asc',
+          onTheMarket: [true],
+          mapMode: 'enabled',
+          showAllModels: false,
+          zoneIdsByTypes: {
+            zoneIds: ['-7444']
+          }
+        }
+      }
+    })
       .then((response) => {
         dispatch({ type: 'FETCH_UPDATE', payload: false });
-        dispatch({ type: 'DATA_UPDATE', payload: response.data });
+        dispatch({ type: 'DATA_UPDATE', payload: response.data.realEstateAds });
         return resolve();
       })
       .catch((err) => {

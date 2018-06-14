@@ -1,10 +1,13 @@
 import LocalStorageManager from 'UTILS/LocalStorageManager';
 
 const defaults = {
-  data: '',
+  data: [],
   fetching: false,
   login: null,
-  token: ''
+  token: '',
+  moyen: [],
+  bon: [],
+  cher: []
 };
 
 export default function reducer(state = defaults, action) {
@@ -16,9 +19,13 @@ export default function reducer(state = defaults, action) {
     };
   }
   case 'DATA_UPDATE': {
+    const newData = state.data.concat(action.payload);
     return {
       ...state,
-      data: action.payload
+      data: newData,
+      cher: newData.filter(apt => apt.bedroomsQuantity <= 2).filter(apt => apt.pricePerSquareMeter > 39),
+      moyen: newData.filter(apt => apt.bedroomsQuantity <= 2).filter(apt => apt.pricePerSquareMeter <= 39 && apt.pricePerSquareMeter > 26),
+      bon: newData.filter(apt => apt.bedroomsQuantity <= 2).filter(apt => apt.pricePerSquareMeter <= 26)
     };
   }
   case 'LOGIN': {

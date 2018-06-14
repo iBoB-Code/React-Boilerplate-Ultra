@@ -6,19 +6,19 @@ import Route from 'react-router-dom/Route';
 import 'semantic-ui-css/semantic.min.css';
 // import Helmet from 'react-helmet';
 import BrowserRouter from 'react-router-dom/BrowserRouter';
-import PrivateRoute from 'COMPONENTS/PrivateRoute';
+// import PrivateRoute from 'COMPONENTS/PrivateRoute';
 import PublicRoute from 'COMPONENTS/PublicRoute';
 
 import Home from './Home';
-import Dashboard from './Dashboard';
-import Visitor from './Visitor';
+import Roadtrip from './Roadtrip';
+import LittleBrain from './LittleBrain';
 import NotFound from './NotFound';
 
 // Force import during development to enable Hot-Module Replacement
 if (process.env.NODE_ENV === 'development') {
   require('./Home'); // eslint-disable-line global-require
-  require('./Dashboard'); // eslint-disable-line global-require
-  require('./Visitor'); // eslint-disable-line global-require
+  require('./Roadtrip'); // eslint-disable-line global-require
+  require('./LittleBrain'); // eslint-disable-line global-require
   require('./NotFound'); // eslint-disable-line global-require
 }
 
@@ -31,8 +31,8 @@ const App = props => (
         {/* <Helmet titleTemplate="%s - DeviceNet" defaultTitle="DeviceNet" /> */}
         <Switch>
           <PublicRoute path="/" component={Home} exact={true} />
-          <PublicRoute path="/visitorRoute" component={Visitor} redirect="/loggedRoute" exact={true} />
-          <PrivateRoute path="/loggedRoute" component={Dashboard} redirect="/visitorRoute" exact={true} />
+          <PublicRoute path="/roadtrip" component={Roadtrip} exact={true} />
+          <PublicRoute path="/little-brain" component={LittleBrain} exact={true} />
           <Route component={NotFound} />
         </Switch>
       </div>

@@ -1,0 +1,131 @@
+$size: 100px;
+$thickness: 10px;
+
+.circle {
+  width: 150px;
+  height: 120px;
+  .donut {
+    width: $size;
+    height: $size;
+    margin: 0 25px;
+    .back {
+      border: $thickness solid white;
+      h1 {
+        font-style: italic;
+        font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+        color: #fff;
+        font-size: 1.6em;
+        margin-top: 15px;
+      }
+    }
+    .back, .over {
+      width: $size;
+      height: $size;
+      border-radius: $size;
+      position: absolute;
+      clip: rect(0px, $size, $size / 2, 0px);
+    }
+    .overContainer {
+      clip: rect(0px, $size, $size / 2, 0px);
+      width: $size;
+      height: $size;
+      position: absolute;
+      .over {
+        border: $thickness solid $cvSecondaryColor;
+        transition: 2s;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  .desc {
+    margin-top: -45px;
+    h1 {
+      font-style: italic;
+      font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.3em;
+      margin: 0;
+    }
+    span {
+      font-size: 0.8em;
+      color: #57bfb8;
+    }
+  }
+}
+
+.skillRot {
+  .over.r90, .over.r95 {
+    transform: rotate(-10deg) !important;
+  }
+  .over.r80 {
+    transform: rotate(-30deg) !important;
+  }
+  .over.r70 {
+    transform: rotate(-50deg) !important;
+  }
+  .over.r60, .over.r65 {
+    transform: rotate(-70deg) !important;
+  }
+  .over.r50 {
+    transform: rotate(-90deg) !important;
+  }
+  .over.r40 {
+    transform: rotate(-110deg) !important;
+  }
+  .over.r30 {
+    transform: rotate(-120deg) !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  $size: 40px;
+  $thickness: 5px;
+  .circle {
+    width: 90px !important;
+    height: 100px !important;
+    .donut {
+      width: $size !important;
+      height: $size !important;
+      .back {
+        border: $thickness solid white !important;
+        h1 {
+          font-size: .6em !important;
+          margin: 0 !important;
+          margin-top: 4px !important;
+        }
+      }
+      .back, .over {
+        width: $size !important;
+        height: $size !important;
+        border-radius: $size !important;
+        position: absolute;
+        clip: rect(0px, $size, $size / 2, 0px) !important;
+      }
+      .overContainer {
+        clip: rect(0px, $size, $size / 2, 0px) !important;
+        width: $size !important;
+        height: $size !important;
+        position: absolute;
+        .over {
+          border: $thickness solid $cvSecondaryColor;
+          transition: 2s;
+          transform: rotate(-180deg);
+        }
+      }
+    }
+    .desc {
+      margin-top: -20px;
+      h1 {
+        font-style: italic;
+        font-family: 'Helvetica Neue', Helvetica, arial, sans-serif;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: .7em;
+        margin: 0;
+      }
+      span {
+        font-size: 0.5em;
+        color: #57bfb8;
+      }
+    }
+  }
+}

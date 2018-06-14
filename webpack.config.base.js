@@ -14,6 +14,7 @@ module.exports = {
       configureStore: path.resolve(__dirname, 'src/store/configureStore'),
       COMPONENTS: 'src/components',
       CONTAINERS: 'src/containers',
+      ASSETS: 'src/assets',
       REDUX: 'src/redux',
       UTILS: 'src/utils',
       style: 'src/style',
