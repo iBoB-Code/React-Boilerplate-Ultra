@@ -6,17 +6,6 @@ html, body, #root{
   -ms-text-size-adjust: 100%;
 }
 
-.hidden {
-  display: none;
-}
-ul, li {
-  list-style:none;
-}
-
-.ui.mini.image {
-  min-height: 35px;
-}
-
 input {
   -webkit-appearance: none;
   -webkit-border-radius: 0;
@@ -65,5 +54,3 @@ input:-webkit-autofill {
 @import './notFound';
 @import './visitor';
 @import './dashboard';
-@import './roadtrip';
-@import './circles';

@@ -56,10 +56,8 @@ module.exports = {
     'import/no-duplicate': 0,
     'react/prefer-stateless-function': 0,
     'react/jsx-no-bind': 0,
-    'jsx-a11y/accessible-emoji': 0,
     'no-unused-expressions': ["error", { "allowTernary": true }],
     'import/extensions': ['off', 'never'],
-    'jsx-a11y/interactive-supports-focus' : 0,
     "react/forbid-prop-types": [0]
   }
 };

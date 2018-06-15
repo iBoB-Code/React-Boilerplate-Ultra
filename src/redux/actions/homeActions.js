@@ -1,13 +1,14 @@
-export function homeReady() {
+export function logout() {
   return {
-    type: 'HOME_READY',
-    payload: true
+    type: 'LOGOUT',
+    payload: null
   };
 }
 
-export function changeSocialDesc(val) {
+
+export function anotherDummyAction(someValue) {
   return {
-    type: 'CHANGE_SOCIAL_DESC',
-    payload: val
+    type: 'TRIGGER_SOMETHING',
+    payload: someValue
   };
 }
